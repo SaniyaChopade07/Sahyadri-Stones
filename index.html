@@ -34,7 +34,7 @@
     <div class="container">
         <div class="row">
                 <div class="about-col-1">
-                    <img src="images/slab img 1.jpg">
+                    <img src="images/about_img.jpg">
                 </div>
                 <div class="about-col-2">
                     <h1 class="sub-title">ABOUT US</h1>
@@ -57,7 +57,7 @@
             <h1 class="sub-title">OUR PRODUCTS</h1>
             <div class="worklist">
                 <div class="work">
-                    <img src="images/adhunikbrowngranite">
+                    <img src="images/adhunikbrowngraniteee.jpg">
                     <div class="info">
                         <h2>Adhunik Brown</h2>
                         <p>"Adorn your space with the timeless elegance of Adhunik Brown granite. Its rich brown tones with specks of lighter hues create a classic and sophisticated ambiance. This granite lends a touch of refinement to any interior."</p>
@@ -113,7 +113,7 @@
                     </div>
                 </div>
                 <div class="work">
-                    <img src="images/PWhiteGranite">
+                    <img src="images/PWhiteGraniteee.jpg">
                     <div class="info">
                         <h2>P White</h2>
                         <p>"Discover the pristine beauty of P White granite. Its pure white canvas with subtle grey veining exudes a sense of sophistication and purity. Perfect for creating a clean, timeless aesthetic, this granite elevates the elegance of any space."</p>
@@ -179,18 +179,20 @@
                 <p><i class="fa-solid fa-envelope"></i>sahyadristones@gmail.com</p>
                 <p><i class="fa-solid fa-phone"></i>8451804131/ 9819544131</p>
                 <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter-square"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/people/Sahyadri-Stones/pfbid0CvUMdGM8VtdPu5TZt5JmVDcHDnvMWtmMHPUKkEMtH9xHc21PZ74gkReGj3bBJ1DWl/"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/SahyadriStones/"><i class="fab fa-twitter-square"></i></a>
+                    <a href="https://www.instagram.com/sahyadristones/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/sahyadri-stones-8b81192a3/"><i class="fab fa-linkedin"></i></a>
                  </div>                 
             </div>
             <div class="contact-right"> 
-                <form name="submit-to-google-sheet"  onsubmit="submitForm(event)">
+                <form name="submit-to-google-sheet">      
                     <input type="text" name="Name" placeholder="Your Name" required>
                     <input type="email" name="Email" placeholder="Your Email" required>
                     <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
-                    <button type="submit" class="btn btn2" >Submit</button>
+                    <button type="submit" class="btn btn2">Submit</button>
+                    <div id="msg"></div>
+                </div>
                 </form> 
             </div> 
             </div>
@@ -202,27 +204,25 @@
         const msg = document.getElementById("msg");
     
         form.addEventListener('submit', e => {
-            e.preventDefault();
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    if (response.ok) {
-                        msg.innerHTML = "Message Sent Successfully";
-                        setTimeout(function () {
-                            msg.innerHTML = "";
-                            form.reset(); // Move form reset here after success
-                        }, 5000);
-                    } else {
-                        throw new Error('Failed to send message');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    msg.innerHTML = "Error Sending Message";
-                });
+          e.preventDefault();
+          fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => {
+              if (response.ok) {
+                msg.innerHTML = "Message Sent Successfully";
+                setTimeout(() => {
+                  msg.innerHTML = "";
+                  form.reset(); // Reset form fields after success
+                }, 2000);
+              } else {
+                throw new Error('Failed to send message');
+              }
+            })
+            .catch(error => {
+              console.error('Error!', error.message);
+              msg.innerHTML = "Error Sending Message";
+            });
         });
-    </script>
-    
-    
+      </script>
     
     </body>
 </html>
