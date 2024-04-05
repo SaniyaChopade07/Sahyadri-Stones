@@ -168,9 +168,9 @@ nav ul li a:hover::after {
 #.work:hover img{
     transition: scale(2.1);
 }
-/*.work:hover .info{
+.work:hover .info{
     height: 100%;
-}*/
+}
 .btn{
     display: block;
     margin: 75px auto;
@@ -181,10 +181,9 @@ nav ul li a:hover::after {
     color: #fff;
     transition: background 0.5s;
 }
-/*.btn:hover{
+.btn:hover{
     background: #ff004f;
 }
-*/
 #contact {
     padding: 50px 0;
     margin-top: 1400px;
